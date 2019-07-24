@@ -1,110 +1,273 @@
-html {
-  scroll-behavior: smooth;
+html{
+	scroll-behavior: smooth;
 }
-*{
-	box-sizing: border-box; 
-	/* This makes the widths of elements more consistent
-		Full details here https://css-tricks.com/box-sizing/ */
-}
-
 body{
-	margin: 0px; /* Often browsers have a 5px margin by deafult*/
-	font-family: arial narrow;
-	background-color: #A499b3;
-	color: white;
+	font: 15px/1.5 Arial Narrow;
+	padding: 0;
+	margin: 0;
+	background-color: #EAEAEA;
 }
-
-section{
-	max-width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	height: 100vh;
-	width: 100vw;
-}
-
-header{
-	/*background-color: #A499b3;*/
-	color: white; /* more readable on an orange background */
-	/*padding-top: 50px;
-	padding-bottom: 50px;*/
-}
-
-nav{
-	width: 100%;
-	height: 60px;
-	background-color: #694D75;
-}
-
-nav a, nav h3{
-	float: left;
-	margin: 0px;
-	line-height: 60px;
-	/*margin-left: 1em;
-	margin-right: 1em;*/
+p a{
 	text-decoration: none;
+	color: #331832
 }
 
-nav a:hover{
-	text-decoration: underline; /* Hover styles to let people know they can click it */
-}
-
-.titlescreen{
-	padding: 50vh 0;
-   	text-align: center;
-}
-.navbar{
-	position: fixed;
-    top: 0px;
-    width: 100%;
-}
-.navbar a{
-	float: left;
-  	padding: 0px;
-  	color: white;
-  	text-decoration: none;
-  	font-size: 20px;
-  	width: 20%; 
-  	text-align: center; 
-}
-/* Add a background color on mouse-over */
-.navbar a:hover {
-  background-color: #331832;
-}
-
-/* Style the current/active link */
-.navbar a.active {
-  background-color: #4CAF50;
-}
-.spacer{
+/* Global Content */
+.container{
 	width: 100%;
-	height: 60px;
-}
-/* Simple grid */
-.g-row{
-	width: 100%;
+	margin: auto;
 	overflow: hidden;
 }
 
-.g-row img{
-	width: 100%; /*This makes all images in grids to be the size of their cell */
+.navbar{
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
 }
 
-.g-50{
+.home-text{
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+	padding-top: 100px;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+/* Header Things */
+header{
+	background-color: #A499B3;
+	color: #ffffff;
+	padding-top: 30px;
+	min-height: 70px;
+	border-bottom: #331832 3px solid;
+}
+
+header a{
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+header li{
+	float: left;
+	display: inline;
+	padding: 0 20px 0 20px;
+}
+
+header #logo{
+	float: left;
+}
+
+header #logo h1{
+	margin: 0;
+}
+
+header nav{
+	float: right;
+	margin-top: 10px;
+}
+
+header .highlight,header .current a{
+	color: #534B62;
+	font-weight: bold;
+}
+header a:hover{
+	color: #331832;
+	font-weight: bold;
+}
+/* Dropdown Menu */
+.dropdown{
+	display: inline;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 100;
+  margin-top: -4px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.cd {
+	cursor: default;
+}
+
+/*Showcase*/
+#home-img{
+	min-height: 600px;
+	background:url('../img/title.jpg') no-repeat 0 -1400px; 
+	text-align: center;
+	color: #ffffff;
+}
+
+#home-img h1{
+	margin-top: 100px;
+	font-size: 55px;
+	margin-bottom: 10px;
+}
+
+#home-img p{
+	font-size: 20px;
+}
+
+#introduction{
+	text-align: center;
+	background-color: #A499B3;
+	padding: 10px;
 	width: 50%;
-	float: left;
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border-radius: 15px;
 }
 
-.g-30{
-	width: 30%;
-	float: left;
+#introduction p{
+	font-size: 30px;
+	color: #ffffff;
 }
 
-.g-70{
-	width: 70%;
-	float: left;
+.image-disc{
+	background-color: #A499B3;
+	padding: 2px;
+	width: 60%;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	border-radius: 15px;
+	color: #ffffff;
+	font-size: 20px;
 }
+
+/* Boxes */
+#boxes{
+	margin-top: 20px;
+}
+
+#boxes .box{
+	float: left;
+	text-align: center;
+	width: 33.33%;
+	padding: 0px;
+}
+
+#boxes .box img{
+	width:80%;
+	border-radius: 15px;
+} 
+
+#boxes .box:hover{
+	background-color: #A499B3;
+	border-radius: 50px;
+} 
+
+#boxes .box:hover>.image-disc{
+	box-shadow: 0 0 3px #ddd;
+} 
+
+/* JS */
+@media(max-width: 768px){
+	header #logo, 
+	header nav,
+	header nav li,
+	header nav li a,
+	#boxes .box,
+	#pages-contents .img-container{
+		float:none;
+		text-align: center;
+		width: 100%;
+
+	}
+	header{
+		padding-bottom: 20px;
+	}
+	#showcase h1{
+		margin-top: 40px;
+	}
+	#boxes .box{
+		padding-bottom: 1px;
+		padding-top: 5px;
+	}
+	.dropdown-content{
+		width: 1%;
+		text-align: center;
+		float: right;
+		margin-left: 40%;
+
+	}
+
+}
+
+/*Links*/
+/*Fibre*/
+#fibre-img{
+	margin-top: 20px;
+	min-height: 600px;
+	background:url('../img/fibre-title.jpg') no-repeat 0 -700px; /* Retrieved from: https://s3-eu-central-1.amazonaws.com/centaur-wp/theengineer/prod/content/uploads/2017/11/21165110/Optical-Fibers.jpg; */
+	text-align: center;
+	color: #ffffff;
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50px
+}
+
+#fibre-img h1{
+	margin-top: 100px;
+	font-size: 55px;
+	margin-bottom: 10px;
+}
+
+/* Simple grid */
+.img-container{
+	width: 40%;
+	overflow: hidden;
+	margin: auto;
+}
+
+.img-container img{
+	max-width: 100%; /*This makes all images in grids to be the size of their cell */
+	border-radius: 25px;
+	margin: auto;
+}
+
+.img-container .img-box img{
+	width: 100%;
+	margin: auto;
+}
+
+.page-text{
+	margin: auto;
+	text-align: center;
+	background-color: #A499B3;
+	padding: 2px;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	border-radius: 15px;
+	color: #ffffff;
+	font-size: 20px;
+}
+
 
 .show{
 	border: 1px solid blue;
@@ -114,11 +277,48 @@ nav a:hover{
 .padded{
 	padding: 20px; /* I add this to cells to add a little padding*/
 }
-/*.vertical-center{
 
-  position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+#pages-contents{
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100	px;
+	margin-bottom: 20px;
 
+}
+/*WiFi Zones*/
+#wifi-img{
+	margin-top: 20px;
+	min-height: 600px;
+	background:url('../img/wifi-booth-title.jpg') no-repeat -1300px -600px; /*Retrieved from: http://thejourneysouth.net/wp-content/uploads/2016/06/DSC02210-449x304.jpg */
+	text-align: center;
+	color: #ffffff;
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50px
+}
+#wifi-img h1{
+	margin-top: 100px;
+	font-size: 55px;
+	margin-bottom: 10px;
+}
 
-}*/
+/*Cameras*/
+#sec-img{
+	margin-top: 20px;
+	min-height: 600px;
+	background:url('../img/sec-title.JPG') no-repeat -700px -300px; 
+	text-align: center;
+	color: #ffffff;
+	max-width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50px
+}
+
+#sec-img h1{
+	margin-top: 100px;
+	font-size: 55px;
+	margin-bottom: 10px;
+}
